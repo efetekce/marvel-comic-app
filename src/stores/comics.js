@@ -18,7 +18,7 @@ export const useComicsStore = defineStore('comics', () => {
 
   async function fetchData() {
     const bigData = await axios.get(
-      `http://gateway.marvel.com/v1/public/comics?orderBy=focDate&limit=50&ts=1&apikey=${apiKey}&hash=${hash}`
+      `http://gateway.marvel.com/v1/public/comics?orderBy=focDate&limit=75&ts=1&apikey=${apiKey}&hash=${hash}`
     )
     // console.log(bigData.data.data.results)
     list.value = bigData.data.data.results

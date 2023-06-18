@@ -13,7 +13,7 @@ onMounted(() => {
   <header>
     <h1>Marvel Comic Store</h1>
     <p>
-      A handful of marvel comics choices will be listed here. You can star them to make a reading
+      A handful of marvel comics choices will be listed here. You can heart them to make a reading
       list, making them accessible in favorites tab.
     </p>
   </header>
@@ -36,8 +36,6 @@ onMounted(() => {
           :class="{ isActive: store.favList.find((i) => item.id === i.id) }"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
           />
         </svg>
@@ -64,9 +62,12 @@ header {
 }
 p {
   text-align: center;
+  font-weight: 400;
+  font-size: 20px;
 }
 h1 {
-  font-size: 40px;
+  font-size: 45px;
+  font-weight: 600;
 }
 button {
   border: none;
@@ -78,10 +79,11 @@ button {
 }
 #heart {
   width: 50px;
-  stroke: #f06;
-  fill: #f3e9e9;
+  stroke: black;
+  fill: slategrey;
   stroke-dasharray: 57;
   stroke-dashoffset: 57;
+  opacity: 0.8;
 }
 @keyframes like {
   0% {

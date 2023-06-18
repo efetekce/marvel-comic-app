@@ -8,7 +8,7 @@ const store = useComicsStore()
   <header>
     <RouterLink to="/" class="link" active-class="active">Home</RouterLink>
     <RouterLink to="/favorites" class="link fav" active-class="active"
-      >Favorites✨ <span class="favicon">{{ store.favCount }} </span>
+      >Favorites <span class="favicon">{{ store.favCount }} </span>
     </RouterLink>
   </header>
 

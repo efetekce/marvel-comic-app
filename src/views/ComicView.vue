@@ -3,18 +3,16 @@ import { useComicsStore } from '../stores/comics'
 import { useRoute } from 'vue-router'
 const store = useComicsStore()
 const route = useRoute()
-console.log(route.params.id)
-console.log(store)
 
 const comic = store.list.find((c) => c.id === parseInt(route.params.id))
 </script>
 
 <template>
-  <div>Comic View</div>
+  <h1>Comic Details</h1>
   <!-- <p>{{ comic }}</p> -->
   <div class="detailwrapper">
-    <p>{{ comic.title }}</p>
-    <p>{{ comic.description }}</p>
+    <p class="title">{{ comic.title }}</p>
+    <p class="desc">{{ comic.description }}</p>
 
     <p class="creators">
       Creators:
@@ -24,9 +22,27 @@ const comic = store.list.find((c) => c.id === parseInt(route.params.id))
 </template>
 
 <style scoped>
+h1 {
+  text-align: center;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 40px;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+}
+.desc {
+  font-weight: 400;
+  font-size: 300;
+}
 .detailwrapper {
   color: whitesmoke;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
   background-color: crimson;
   margin: 20px;
   padding: 20px;
