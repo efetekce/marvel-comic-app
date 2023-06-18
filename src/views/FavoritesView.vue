@@ -6,8 +6,8 @@ console.log(store.favCount)
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is the favorites page</h1>
+  <div class="favwrapper">
+    <h1>Your Favorites List</h1>
     <div v-for="fav in store.favList" :key="fav.id" class="favoritecard">
       <p>{{ fav.title }}</p>
       <p>{{ fav.description }}</p>
@@ -17,7 +17,7 @@ console.log(store.favCount)
   </div>
 </template>
 
-<style>
+<style scoped>
 /* @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
@@ -25,13 +25,21 @@ console.log(store.favCount)
     align-items: center;
   }
 } */
-.favoritecard{
-  /* display: flex; */
+.favwrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
+}
+.favoritecard {
   background-color: crimson;
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
-
 }
 </style>

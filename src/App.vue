@@ -1,25 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+import { useComicsStore } from './stores/comics'
+const store = useComicsStore()
 </script>
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div> -->
-    <RouterLink to="/" class="link">Home</RouterLink>
-    <RouterLink to="/favorites" class="link fav"
-      >Favorites✨
-
-      <div class="favicon">📈</div>
+    <RouterLink to="/" class="link" active-class="active">Home</RouterLink>
+    <RouterLink to="/favorites" class="link fav" active-class="active"
+      >Favorites✨ <span class="favicon">{{ store.favCount }} </span>
     </RouterLink>
   </header>
 
@@ -29,19 +18,28 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped>
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+}
+.active {
+  font-weight: bold;
+  color: crimson !important;
 }
 .link {
+  color: whitesmoke;
   text-decoration: none;
   font-size: 3rem;
 }
 .link fav {
   position: relative;
+  margin-top: 200px;
 }
 .favicon {
+  display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
+  font-size: 20px;
 }
 /* header {
   line-height: 1.5;

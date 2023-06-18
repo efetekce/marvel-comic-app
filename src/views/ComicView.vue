@@ -12,18 +12,26 @@ const comic = store.list.find((c) => c.id === parseInt(route.params.id))
 <template>
   <div>Comic View</div>
   <!-- <p>{{ comic }}</p> -->
-  <p>{{ $route.params.id }}</p>
+  <div class="detailwrapper">
+    <p>{{ comic.title }}</p>
+    <p>{{ comic.description }}</p>
 
-  <p>{{ comic.title }}</p>
-  <p>{{ comic.description }}</p>
-  <p>{{ comic.title }}</p>
-  <p class="creators">
-    Creators:
-    <span v-for="creator in comic.creators.items" :key="creator.name">{{ creator.name }}</span>
-  </p>
+    <p class="creators">
+      Creators:
+      <span v-for="creator in comic.creators.items" :key="creator.name">{{ creator.name }}</span>
+    </p>
+  </div>
 </template>
 
 <style scoped>
+.detailwrapper {
+  color: whitesmoke;
+  justify-content: space-between;
+  background-color: crimson;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
 .creators {
   display: flex;
   justify-content: space-evenly;
