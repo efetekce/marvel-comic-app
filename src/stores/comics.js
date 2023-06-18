@@ -8,8 +8,8 @@ export const useComicsStore = defineStore('comics', () => {
   const favCount = ref(0)
   const list = ref([])
   const favList = ref([])
-  const apiKey = import.meta.env.VITE_API_KEY
-  const hash = import.meta.env.VITE_HASH
+  const apiKey = 'fc35d395c01a6d850fa395f2d32a9ddc'
+  const hash = '1f29a8967f93f0c2110f9e08f163d935'
 
   //getters
   // const doubleCount = computed(() => count.value * 2)
