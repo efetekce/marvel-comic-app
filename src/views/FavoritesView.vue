@@ -9,8 +9,8 @@ console.log(store.favCount)
   <div class="favwrapper">
     <h1>Your Favorites List</h1>
     <div v-for="fav in store.favList" :key="fav.id" class="favoritecard">
-      <p>{{ fav.title }}</p>
-      <p>{{ fav.description }}</p>
+      <p class="title">{{ fav.title }}</p>
+      <p class="desc">{{ fav.description }}</p>
       <!-- <p>{{ fav.title }}</p> arka plan olcak -->
       <p v-for="creator in fav.creators.items" :key="creator.name">{{ creator.name }}</p>
     </div>
@@ -26,20 +26,31 @@ console.log(store.favCount)
   }
 } */
 .favwrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  color: whitesmoke;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+}
+.desc {
+  font-weight: 400;
+  font-size: 300;
 }
 h1 {
   font-size: 50px;
   text-align: center;
   color: whitesmoke;
+  font-weight: 600;
 }
 .favoritecard {
   background-color: crimson;
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 </style>

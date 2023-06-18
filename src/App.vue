@@ -35,11 +35,19 @@ header {
   margin-top: 200px;
 }
 .favicon {
-  display: inline-block;
   position: absolute;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   right: 0;
   font-size: 20px;
+  color: whitesmoke;
+  background-color: crimson;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }
 /* header {
   line-height: 1.5;
